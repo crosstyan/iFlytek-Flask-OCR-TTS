@@ -127,3 +127,14 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+.gitignore
+__pycache__
+/ai
+/venv
+/ai_venv
+*.log
+flask.code-workspace
+/test_prog
+/application/static/image/*
+/application/static/audio/*
