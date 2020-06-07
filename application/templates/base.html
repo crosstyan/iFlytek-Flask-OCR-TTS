@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{%block title%}{%endblock%}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/stylesheet.css') }}">
+    {% block head %}
+    {% endblock%}
+</head>
+<body>
+    <div class="container">
+        {%block content%}
+        {%endblock%}
+    </div>
+    <footer class="footer fixed-bottom">
+        <div class="container">
+            <span class="text-muted">
+                Check the project at <a href="https://github.com/crosstyan/iFlytek_Flask_OCR_TTS/">Github</a>
+            </span>
+            {%block footer%}
+            {%endblock%}
+        </div>
+    </footer>
+    {%block scripts%}
+    {%endblock%}
+</body>
+</html>

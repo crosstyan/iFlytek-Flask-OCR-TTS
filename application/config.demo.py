@@ -1,0 +1,11 @@
+UPLOAD_IMAGE_PATH='image'
+UPLOADED_IMAGE_DEST=''
+UPLOAD_AUDIO_PATH='audio'
+UPLOADED_AUDIO_DEST=''
+APPID=''
+OCR_API='http://webapi.xfyun.cn/v1/service/v1/ocr/recognize_document'
+OCR_KEY=''
+TTS_API='http://api.xfyun.cn/v1/service/v1/tts'
+TTS_KEY=''
+TTS_SECRET=''
+MAX_CONTENT_LENGTH=2*1024*1024
