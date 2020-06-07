@@ -1,34 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Result of {{file_id}}</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/stylesheet.css') }}">
-</head>
-<body>
-    <div class="container">
-        <h1 class="mt-5">Result of {{file_id}}</h1>
-        <div class="card mt-5">
-            <h5 class="card-header">Original Image</h5>
+{%extends "base.html"%}
+{%block title %}
+Result of {{file_id}}
+{%endblock%}
+{%block content%}
+    <h1 class="mt-5">Result of {{file_id}}</h1>
+    <div class="card mt-5">
+        <h5 class="card-header">Original Image</h5>
+        <div class="card-body">
+            <img src={{jpeg_file_url}} alt={{file_id}} class="img-fluid">
+        </div>
+    </div>
+        <div class="card mt-3">
+            <h5 class="card-header">OCR Result</h5>
             <div class="card-body">
-                <img src={{jpeg_file_url}} alt={{file_id}} class="img-fluid">
+                {% for para in text_result %}
+                    {{para}}<br>
+                {% endfor %}
             </div>
         </div>
-            <div class="card mt-3">
-                <h5 class="card-header">OCR Result</h5>
-                <div class="card-body">
-                    {% for para in text_result %}
-                        {{para}}<br>
-                    {% endfor %}
-                </div>
-            </div>
-            <div class="card mt-3 d-flex flex-column">
-                <h5 class="card-header">TTS Result</h5>
-                <audio src={{audio_file_url}} autoplay controls="controls" class="mt-2"></audio>
-            </div> 
-            <a href="/index" class="btn btn-primary mt-3 w-100 mb-5">Try another one!</a>
-    </div>
-</body>
-</html>
+        <div class="card mt-3 d-flex flex-column">
+            <h5 class="card-header">TTS Result</h5>
+            <audio src={{audio_file_url}} autoplay controls="controls" class="mt-2"></audio>
+        </div> 
+        <a href="/index" class="btn btn-primary mt-3 w-100">Try another one!</a>
+        <div id="FL" class="alert alert-success mt-3 ">
+            Powerd by <a href="https://www.xfyun.cn/">iFlytek</a>
+        </div>
+{%endblock%}

@@ -1,15 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Upload</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/stylesheet.css') }}">
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-</head>
-<body>
-    <div class="container">
+{%extends "base.html"%}
+{%block title %}
+OCR & TTS Demo
+{%endblock%}
+
+{%block head%}
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+{%endblock%}
+
+{%block content%}
     <h1 class="mt-5 mb-4">OCR & TTS Demo</h1>
         <form method="POST" enctype="multipart/form-data" action="/upload">
             <div class="custom-file">
@@ -27,12 +25,15 @@
                 The size of picture should less then 2MB
             </p>
         </div>
-    </div>
-    <script type="application/javascript">
-        $('input[type="file"]').change(function(e){
-            var fileName = e.target.files[0].name;
-            $('.custom-file-label').html(fileName);
-        });
-    </script>
-</body>
-</html>
+        <div class="alert alert-success">
+            Powerd by <a href="https://www.xfyun.cn/">iFlytek</a>
+        </div>
+{%endblock%}
+{%block scripts%}
+<script type="application/javascript">
+    $('input[type="file"]').change(function(e){
+        var fileName = e.target.files[0].name;
+        $('.custom-file-label').html(fileName);
+    });
+</script>
+{%endblock%}

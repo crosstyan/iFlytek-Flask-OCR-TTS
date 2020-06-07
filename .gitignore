@@ -138,3 +138,4 @@ flask.code-workspace
 /test_prog
 /application/static/image/*
 /application/static/audio/*
+/application/config.py
