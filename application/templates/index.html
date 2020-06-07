@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Upload</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/stylesheet.css') }}">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+    <h1 class="mt-5 mb-4">OCR & TTS Demo</h1>
+        <form method="POST" enctype="multipart/form-data" action="/upload">
+            <div class="custom-file">
+                <input type="file"  name="image" class="custom-file-input" id="customFile">
+                <label class="custom-file-label" for="customFile">Choose file</label>
+            </div>
+            <input type="submit" class="btn-success btn mt-2 w-100" value="Upload Picture">
+        </form>
+        <div class="alert alert-primary mt-5">
+            Upload the image you want to process
+        </div>
+        <div class="alert alert-warning ">
+            <p>
+                Only support jpeg and png<hr>
+                The size of picture should less then 2MB
+            </p>
+        </div>
+    </div>
+    <script type="application/javascript">
+        $('input[type="file"]').change(function(e){
+            var fileName = e.target.files[0].name;
+            $('.custom-file-label').html(fileName);
+        });
+    </script>
+</body>
+</html>
