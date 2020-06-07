@@ -1,1 +1,1 @@
-# iFlytek_Flask_OCR_TTS
+# Flask Web Application based on OCR TTS iFlytek
