@@ -43,6 +43,24 @@ use`pip install -r requirements.txt` to install all of the dependency.
 ### Configure
 Rename `application/config.demo.py` to `config.py`. and fill the `OCR_KEY`, `TTS_KEY`, `TTS_SECRET` and `APPID`, which you can get from [iFlytek](https://www.xfyun.cn/)
 ### Start
+You're directory tree should look like this
+```
+├── application
+│   ├── config.py
+│   ├── __init__.py
+│   ├── route.py
+│   ├── static
+│   │   ├── audio
+│   │   ├── css
+│   │   │   └── stylesheet.css
+│   │   └── image
+│   └── templates
+│       ├── base.html
+│       ├── index.html
+│       └── view.html
+├── app.py
+└── requirements.txt
+```
 ```bash
 flask run
 ```
