@@ -65,5 +65,3 @@ You're directory tree should look like this
 flask run
 ```
 Or uWSGI, or any WSGI compatible web server. 
-## Demo
-Here's a [demo site](http://ai.nyan.one/)
